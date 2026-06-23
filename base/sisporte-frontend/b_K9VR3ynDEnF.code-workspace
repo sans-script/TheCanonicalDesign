@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../sicaf-backend"
+		}
+	],
+	"settings": {
+		"powershell.cwd": "b_K9VR3ynDEnF"
+	}
+}

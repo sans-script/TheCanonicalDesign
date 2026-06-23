@@ -1,0 +1,119 @@
+@baseUrl = http://localhost:3000
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+
+### ----------------------------------------------------------------
+### 1. AUTENTICAÇÃO (ADMIN)
+### ----------------------------------------------------------------
+
+# @name login
+# Realiza a autenticação do administrador para acesso ao painel.
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@guardasaoluis.ma.gov.br",
+  "password": "admin-password"
+}
+
+### ----------------------------------------------------------------
+### 2. DASHBOARD / ESTATÍSTICAS
+### ----------------------------------------------------------------
+
+# @name getStats
+# Retorna os números consolidados para o dashboard.
+GET {{baseUrl}}/api/stats
+Authorization: Bearer {{authToken}}
+
+### ----------------------------------------------------------------
+### 3. GUARDAS (GERENCIAMENTO)
+### ----------------------------------------------------------------
+
+# @name getAllGuards
+# Lista guardas com suporte a busca (termo) e filtros.
+GET {{baseUrl}}/api/guards?searchTerm=&status=active&sortBy=nome-asc
+Authorization: Bearer {{authToken}}
+
+###
+
+# @name getGuardById
+# Retorna os detalhes completos de um guarda para edição/visualização admin.
+# Inclui o "token" de validação que é gerado na criação.
+GET {{baseUrl}}/api/guards/1
+Authorization: Bearer {{authToken}}
+
+###
+
+# @name createGuard
+# Cria um novo guarda. O backend deve gerar um UUID v4 como 'token' de validação.
+POST {{baseUrl}}/api/guards
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+{
+  "name": "ROBERTO ALMEIDA LIMA",
+  "registrationNumber": "123.460-1",
+  "admissionDate": "2021-05-10",
+  "role": "GUARDA MUNICIPAL",
+  "rank": "3ª CL",
+  "cardIssuingPlace": "SÃO LUÍS",
+  "cardIssuingDate": "2024-04-13",
+  "serial": "A00167570",
+  "sinarmNumber": "A00167570",
+  "expirationDate": "2034-04-13",
+  "birthPlace": "SÃO LUÍS",
+  "state": "MA",
+  "birthDate": "1994-08-22",
+  "bloodType": "A+",
+  "rg": "000000127",
+  "cpf": "000.000.127-89",
+  "filiation": {
+    "fatherName": "JACINTO LIMA",
+    "motherName": "TEREZA ALMEIDA LIMA"
+  },
+  "status": "active"
+}
+
+###
+
+# @name updateGuard
+# Atualização parcial ou total dos dados.
+PUT {{baseUrl}}/api/guards/1
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+{
+  "name": "ROBERTO ALMEIDA LIMA (ATUALIZADO)",
+  "status": "onLeave"
+}
+
+###
+
+# @name deleteGuard
+# Exclusão do registro.
+DELETE {{baseUrl}}/api/guards/1
+Authorization: Bearer {{authToken}}
+
+###
+
+# @name uploadGuardPhoto
+# Upload da foto 3x4.
+POST {{baseUrl}}/api/guards/1/photo
+Authorization: Bearer {{authToken}}
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="photo"; filename="photo.jpg"
+Content-Type: image/jpeg
+
+< ./public/placeholder.png
+--boundary--
+
+### ----------------------------------------------------------------
+### 4. VALIDAÇÃO PÚBLICA (SEGURA)
+### ----------------------------------------------------------------
+
+# @name validateToken
+# Retorna os dados para renderização da carteira virtual.
+# IMPORTANTE: Endpoint anônimo (sem token Bearer).
+# O uso de UUID garante que a URL não seja adivinhável.
+GET {{baseUrl}}/api/validate/550e8400-e29b-41d4-a716-446655440000

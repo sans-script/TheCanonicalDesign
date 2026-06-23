@@ -1,0 +1,91 @@
+.batch-preview-sheet {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  width: 794px !important; 
+  height: 1123px !important; 
+  box-sizing: border-box !important;
+  padding: 14px 40px !important; 
+  gap: 14px !important;
+  background: white !important;
+  overflow: hidden !important;
+  margin: 0 auto !important;
+}
+
+.batch-card-slot {
+  width: auto !important;
+  max-width: 100%;
+  overflow: visible !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: center;
+}
+
+.batch-preview-sheet .screen-viewer {
+  display: none !important;
+}
+
+.batch-preview-sheet .print-only {
+  display: flex !important;
+  position: static !important;
+  left: auto !important;
+  top: auto !important;
+  transform: none !important;
+  flex-direction: row !important;
+  align-items: flex-start !important;
+  visibility: visible !important;
+}
+
+.batch-preview-sheet .card-container {
+  width: auto !important;
+  height: 204px !important; 
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-start !important;
+  gap: 0 !important;
+  overflow: visible !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.batch-preview-sheet .card-side {
+  width: 324px !important; 
+  height: 204px !important;
+  overflow: hidden !important;
+  display: block !important;
+  position: relative !important;
+  background: transparent !important;
+  flex: 0 0 324px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.batch-preview-sheet .card-side:first-child {
+  margin-right: 0 !important;
+  border-right: none !important;
+}
+
+.batch-preview-sheet .card-side > div {
+  transform: scale(0.6) !important;
+  transform-origin: top left !important;
+  width: 540px !important;
+  height: 340px !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+.batch-page-root .a4-sheet-container .page-counter {
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+  color: #94a3b8;
+  font-weight: 500;
+  font-size: 13px;
+  pointer-events: none;
+  z-index: 50;
+}

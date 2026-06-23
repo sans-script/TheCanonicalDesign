@@ -1,0 +1,242 @@
+@import "tailwindcss";
+/* @import "tw-animate-css"; */
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  /* Color definitions for Tailwind CSS v4 */
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Base theme variables */
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+  --primary: 142 76% 36%;
+  --primary-foreground: 355.7 100% 97.3%;
+  --secondary: 210 40% 98%;
+  --secondary-foreground: 222.2 84% 4.9%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 210 40% 96%;
+  --accent-foreground: 222.2 84% 4.9%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 142 76% 36%;
+  --radius: 0.5rem;
+  --chart-1: 12 76% 61%;
+  --chart-2: 173 58% 39%;
+  --chart-3: 197 37% 24%;
+  --chart-4: 43 74% 66%;
+  --chart-5: 27 87% 67%;
+  --sidebar: var(--background);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: var(--accent);
+  --sidebar-accent-foreground: var(--accent-foreground);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
+
+  /* Color mappings for Tailwind CSS v4 */
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar: hsl(var(--sidebar));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+
+  /* === INFO === */
+  --color-info-lighter: rgba(202, 253, 245, 1);
+  --color-info-light: rgba(97, 243, 243, 1);
+  --color-info-main: rgba(0, 184, 217, 1);
+  --color-info-dark: rgba(0, 108, 156, 1);
+  --color-info-darker: rgba(0, 55, 104, 1);
+  --color-info-transparent-8: rgba(0, 184, 217, 0.08);
+  --color-info-transparent-12: rgba(0, 184, 217, 0.12);
+  --color-info-transparent-16: rgba(0, 184, 217, 0.16);
+  --color-info-transparent-24: rgba(0, 184, 217, 0.24);
+  --color-info-transparent-32: rgba(0, 184, 217, 0.32);
+  --color-info-transparent-48: rgba(0, 184, 217, 0.48);
+
+  /* === SUCCESS === */
+  --color-success-lighter: rgba(216, 251, 222, 1);
+  --color-success-light: rgba(134, 232, 171, 1);
+  --color-success-main: rgba(54, 179, 126, 1);
+  --color-success-dark: rgba(27, 128, 106, 1);
+  --color-success-darker: rgba(10, 85, 84, 1);
+  --color-success-transparent-8: rgba(54, 179, 126, 0.08);
+  --color-success-transparent-12: rgba(54, 179, 126, 0.12);
+  --color-success-transparent-16: rgba(54, 179, 126, 0.16);
+  --color-success-transparent-24: rgba(54, 179, 126, 0.24);
+  --color-success-transparent-32: rgba(54, 179, 126, 0.32);
+  --color-success-transparent-48: rgba(54, 179, 126, 0.48);
+
+  /* === WARNING === */
+  --color-warning-lighter: rgba(255, 245, 204, 1);
+  --color-warning-light: rgba(255, 214, 102, 1);
+  --color-warning-main: rgba(255, 171, 0, 1);
+  --color-warning-dark: rgba(183, 110, 0, 1);
+  --color-warning-darker: rgba(122, 65, 0, 1);
+  --color-warning-transparent-8: rgba(255, 171, 0, 0.08);
+  --color-warning-transparent-12: rgba(255, 171, 0, 0.12);
+  --color-warning-transparent-16: rgba(255, 171, 0, 0.16);
+  --color-warning-transparent-24: rgba(255, 171, 0, 0.24);
+  --color-warning-transparent-32: rgba(255, 171, 0, 0.32);
+  --color-warning-transparent-48: rgba(255, 171, 0, 0.48);
+
+  /* === ERROR === */
+  --color-error-lighter: rgba(255, 233, 213, 1);
+  --color-error-light: rgba(255, 172, 130, 1);
+  --color-error-main: rgba(255, 86, 48, 1);
+  --color-error-dark: rgba(183, 29, 24, 1);
+  --color-error-darker: rgba(122, 9, 22, 1);
+  --color-error-transparent-8: rgba(255, 86, 48, 0.08);
+  --color-error-transparent-12: rgba(255, 86, 48, 0.12);
+  --color-error-transparent-16: rgba(255, 86, 48, 0.16);
+  --color-error-transparent-24: rgba(255, 86, 48, 0.24);
+  --color-error-transparent-32: rgba(255, 86, 48, 0.32);
+  --color-error-transparent-48: rgba(255, 86, 48, 0.48);
+
+  /* === PRIMARY === */
+  --color-primary-lighter: rgba(200, 250, 205, 1);
+  --color-primary-light: rgba(91, 229, 132, 1);
+  --color-primary-main: rgba(0, 171, 85, 1);
+  --color-primary-dark: rgba(0, 123, 85, 1);
+  --color-primary-darker: rgba(0, 82, 73, 1);
+  --color-primary-transparent-8: rgba(0, 171, 85, 0.08);
+  --color-primary-transparent-12: rgba(0, 171, 85, 0.12);
+  --color-primary-transparent-16: rgba(0, 171, 85, 0.16);
+  --color-primary-transparent-24: rgba(0, 171, 85, 0.24);
+  --color-primary-transparent-32: rgba(0, 171, 85, 0.32);
+  --color-primary-transparent-48: rgba(0, 171, 85, 0.48);
+
+  /* === SECONDARY === */
+  --color-secondary-lighter: rgba(214, 228, 255, 1);
+  --color-secondary-light: rgba(132, 169, 255, 1);
+  --color-secondary-main: rgba(51, 102, 255, 1);
+  --color-secondary-dark: rgba(25, 57, 183, 1);
+  --color-secondary-darker: rgba(9, 26, 122, 1);
+  --color-secondary-transparent-8: rgba(51, 102, 255, 0.08);
+  --color-secondary-transparent-12: rgba(51, 102, 255, 0.12);
+  --color-secondary-transparent-16: rgba(51, 102, 255, 0.16);
+  --color-secondary-transparent-24: rgba(51, 102, 255, 0.24);
+  --color-secondary-transparent-32: rgba(51, 102, 255, 0.32);
+  --color-secondary-transparent-48: rgba(51, 102, 255, 0.48);
+
+  /* === GREY === */
+  --color-grey-100: rgba(249, 250, 251, 1);
+  --color-grey-200: rgba(244, 246, 248, 1);
+  --color-grey-300: rgba(223, 227, 232, 1);
+  --color-grey-400: rgba(196, 205, 213, 1);
+  --color-grey-500: rgba(145, 158, 171, 1);
+  --color-grey-600: rgba(99, 115, 129, 1);
+  --color-grey-700: rgba(69, 79, 91, 1);
+  --color-grey-800: rgba(33, 43, 54, 1);
+  --color-grey-900: rgba(22, 28, 36, 1);
+  --color-grey-transparent-8: rgba(145, 158, 171, 0.08);
+  --color-grey-transparent-12: rgba(145, 158, 171, 0.12);
+  --color-grey-transparent-16: rgba(145, 158, 171, 0.16);
+  --color-grey-transparent-24: rgba(145, 158, 171, 0.24);
+  --color-grey-transparent-32: rgba(145, 158, 171, 0.32);
+  --color-grey-transparent-48: rgba(145, 158, 171, 0.48);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Desabilita a rolagem da página globalmente */
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Animações customizadas para modais */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Classes de animação */
+.animate-in {
+  animation-fill-mode: both;
+}
+
+.animate-out {
+  animation-fill-mode: both;
+}
+
+.data-\[state\=open\]\:animate-in[data-state="open"] {
+  animation-name: fade-in;
+  animation-duration: 200ms;
+  animation-timing-function: ease-out;
+}
+
+.data-\[state\=closed\]\:animate-out[data-state="closed"] {
+  animation-name: fade-out;
+  animation-duration: 200ms;
+  animation-timing-function: ease-out;
+}
+
+.data-\[state\=open\]\:fade-in-0[data-state="open"] {
+  animation-name: fade-in;
+  animation-duration: 200ms;
+}
+
+.data-\[state\=closed\]\:fade-out-0[data-state="closed"] {
+  animation-name: fade-out;
+  animation-duration: 200ms;
+}

@@ -1,8 +1,20 @@
 # The Canonical Design System
 
-A reusable **Next.js dashboard template** intended to provide a consistent starting point for internal tools and administrative web applications. The goal is to speed up the creation of new systems by reusing a shared layout and adapting each project's visual identity, navigation, and page content instead of rebuilding the interface from scratch.
+**A design foundation for building deliberate interfaces instead of shipping AI slop.**
 
-> **Project status:** Work in progress. The current home page contains placeholder dashboard metrics and content; this repository is a foundation to extend, not a finished production-ready design system.
+The Canonical Design System is a reusable starting point for administrative web applications and internal tools. It exists to make good interface decisions repeatable: establish a coherent visual language and shared components once, then adapt them thoughtfully to each product's users, workflows, and identity.
+
+AI can help with implementation, but generated output is not a substitute for design judgment. The goal is not to ban AI-assisted development; it is to avoid generic, interchangeable interfaces that look plausible at a glance but lack consistency, context, and refinement.
+
+> **Project status:** Work in progress. The current home page contains placeholder dashboard metrics and content. This repository is a foundation to develop, not a finished production-ready design system.
+
+## Principles
+
+- **Intentional design over defaults.** Layout, hierarchy, spacing, typography, color, and interaction should serve a clear purpose rather than simply reproduce familiar dashboard patterns.
+- **Consistency without sameness.** Shared components and design tokens provide a coherent foundation, while each application can retain an identity suited to its context.
+- **Reuse with judgment.** Reusable patterns reduce repetitive implementation work, but should not force every product into the same structure when its workflow calls for something different.
+- **Refinement over output volume.** A working screen is only a starting point. Details, accessibility, responsive behavior, and real user workflows still need deliberate review.
+- **AI as a tool, not an art director.** AI-assisted coding can accelerate implementation, but the result must be evaluated, edited, and owned by a human with clear product and design intent.
 
 ## Current foundation
 
@@ -13,6 +25,8 @@ A reusable **Next.js dashboard template** intended to provide a consistent start
 - Tailwind CSS styling and Sass support.
 - Reusable React components built with Next.js App Router.
 - Lucide icons and Geist fonts.
+
+These elements are the initial scaffold, not proof that every interaction or design-system convention is complete. Search, notification, and profile elements are currently UI scaffolding and should not be assumed to be connected to backend services.
 
 ## Technology stack
 
@@ -42,7 +56,7 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser. The app reloads as you edit the source files.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ### Create a production build
 
@@ -65,15 +79,17 @@ components/
 
 ## Customization
 
-Use this repository as a starting point for a new application:
+When adapting the foundation to a new application:
 
-1. Adapt the shared layout and navigation to the system's workflow.
-2. Define reusable components and consistent design tokens for colors, spacing, typography, and borders.
-3. Replace the sample dashboard metrics and placeholder content with real application pages.
-4. Update the metadata, labels, and visual identity for the target project.
-5. Connect interactive controls to actual application behavior before deploying.
+1. Understand the users, tasks, and constraints before choosing a page structure.
+2. Adapt the shared layout and navigation to the system's actual workflow.
+3. Define and reuse design tokens for color, spacing, typography, borders, and states.
+4. Replace sample metrics and placeholder content with real application-specific information.
+5. Check responsive behavior, accessibility, hierarchy, and interaction states.
+6. Connect controls to real behavior before deployment.
+7. Review generated or copied UI critically; remove patterns that are generic, inconsistent, unnecessary, or unsupported by the product's needs.
 
-The current search, notification, and profile elements are UI scaffolding; they should not be assumed to be connected to backend services.
+The aim is to make considered design easier to repeat—not to make every application look identical or to disguise unfinished work as a complete design system.
 
 ## Available scripts
 
@@ -83,10 +99,6 @@ The current search, notification, and profile elements are UI scaffolding; they 
 | `npm run build` | Build the application for production |
 | `npm run start` | Serve the production build |
 | `npm run lint` | Run ESLint |
-
-## Design direction
-
-The project is intended to support consistent, maintainable interfaces across multiple administrative systems while allowing each application to have its own identity. Shared patterns should reduce repeated implementation work without preventing individual systems from meeting their specific needs.
 
 ## License
 

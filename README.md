@@ -77,6 +77,8 @@ components/
   Layout/          # Shared application layout
 ```
 
+The repository also includes additional starting points under `base/` (`neumann-platform` and `saneagest`). The instructions above describe the root application scaffold; review each nested project before using it as the basis for a separate application.
+
 ## Customization
 
 When adapting the foundation to a new application:

@@ -1,4 +1,4 @@
-# The Canonical Design System
+# The Canonical Design System — A SPA Template
 
 **A design foundation for building deliberate interfaces instead of shipping AI slop.**
 
